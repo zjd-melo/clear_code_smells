@@ -4,7 +4,7 @@
 
 >在每次提交之前进行 linter 检查。
 
-## Usage
+## 说明
 ### 安装依赖
 ```shell
 python -m venv venv --upgrade-deps
@@ -38,3 +38,7 @@ repos:
 ### 其他
 1. 默认情况下，只会对 git add 的文件进行 pylint，`pre-commit run --all-files` 可以对所有文件检查。
 
+## 使用
+- `git clone this repo` 
+- `pip install -r requirements.txt`
+- `pre-commit install`
