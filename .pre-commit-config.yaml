@@ -1,18 +1,40 @@
 repos:
-  # pylint 需要本地安装
-  - repo: local
-#  - repo: https://github.com/pycqa/pylint
-#    rev: v3.1.0
+  - repo: https://github.com/Yelp/detect-secrets
+    rev: v1.4.0
     hooks:
-      - id: pylint
-        name: pylint
-        entry: pylint
-        language: system
-        types: [python]
-        args:
-          []
+      - id: detect-secrets
+        name: Detect secrets
+        language: python
+#        args: [ '--baseline', '.secrets.baseline' ]
+
+  - repo: https://github.com/psf/black-pre-commit-mirror
+    rev: 24.3.0
+    hooks:
+      - id: black
+        name: Black format code
+        exclude: \.py-tpl$
 
   - repo: https://github.com/PyCQA/isort
     rev: 5.13.2
     hooks:
       - id: isort
+        name: isort (python)
+#      - id: isort
+#        name: isort (cython)
+#        types: [ cython ]
+#      - id: isort
+#        name: isort (pyi)
+#        types: [ pyi ]
+
+  # pylint 需要本地安装
+  - repo: local
+    #  - repo: https://github.com/pycqa/pylint
+    #    rev: v3.1.0
+    hooks:
+      - id: pylint
+        name: pylint
+        entry: pylint
+        language: system
+        types: [ python ]
+        args:
+          [ ]
