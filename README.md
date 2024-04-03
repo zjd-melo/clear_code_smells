@@ -42,3 +42,7 @@ repos:
 - `git clone this repo` 
 - `pip install -r requirements.txt`
 - `pre-commit install`
+
+## pre-commit
+如果本地环境没有对应的工具，`pre-commit` 会从指定的 `repo` 下载对应的项目保存到本地缓存
+`~/.cache/pre-commit` 下面，有些工具需要本地提前安装。
